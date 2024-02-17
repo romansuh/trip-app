@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5px 15px;
+    padding: 10px 15px;
+    border-bottom: 1px solid lightgray;
 }
 
 .modal-header-cross {
@@ -35,6 +36,14 @@
     padding: 3px;
     margin-top: 15px;
     border: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.add-trip-form-field::placeholder {
+    color: rgba(157, 156, 156, 0.75);
+}
+
+.select-city-placeholder[selected][value="none"] {
+    color: rgba(157, 156, 156, 0.75);
 }
 
 .add-trip-btns-wrapper {

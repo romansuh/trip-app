@@ -1,3 +1,5 @@
+import "./WeekForecast.css";
+
 const WeekForecast = () => {
     return (
         <div className="week-forecast-wrapper">
