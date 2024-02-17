@@ -1,0 +1,63 @@
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+
+.modal-header-cross {
+    color: transparent;
+    text-shadow: 0 0 0 #afacac;
+    cursor: pointer;
+}
+
+.add-trip-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-trip-form > * {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-trip-form-label {
+    margin: 15px;
+}
+
+.add-trip-form-fields {
+    margin-bottom: 50px;
+}
+
+.add-trip-form-field {
+    font-size: 24px;
+    padding: 3px;
+    margin-top: 15px;
+    border: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.add-trip-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 15px;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.btn-close-modal {
+    border: 1px solid rgba(210, 210, 210, 0.75);
+    background-color: transparent;
+}
+
+.btn-save-modal {
+    border: none;
+    background-color: #535bf2;
+    color: white;
+}

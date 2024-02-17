@@ -1,0 +1,25 @@
+.trips-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.trip-card {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.city-image-wrapper {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+}
+
+.add-trip-button {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(240, 240, 243, 0.78);
+    text-align: center;
+    border: 1px solid rgba(232, 232, 234, 0.78);
+    font-weight: bold;
+}

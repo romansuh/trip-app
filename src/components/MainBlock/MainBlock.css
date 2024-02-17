@@ -1,0 +1,24 @@
+.main-block {
+    width: 65%;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.main-block-header {
+    font-weight: normal;
+}
+
+.search-trip-input {
+    background-color: rgba(240, 240, 243, 0.78);
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.search-trip-input::placeholder {
+    color: black;
+    opacity: 1;
+}

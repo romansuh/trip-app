@@ -1,0 +1,6 @@
+.selected-trip-weather-card {
+    background-color: #041c44;
+    color: white;
+    width: 35%;
+    box-shadow: 0 1px 16px 2px rgba(210, 210, 210, 0.75);
+}
