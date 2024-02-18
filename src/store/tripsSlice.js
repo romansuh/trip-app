@@ -33,9 +33,14 @@ const tripsSlice = createSlice({
     name: "trips",
     initialState,
     reducers: {
+        setTrips: (state, action) => {
+            state.trips = action.payload;
+        },
         addTrip: (state, action) => {
             state.trips = [...state.trips, action.payload]
                 .sort((a, b) => new Date(a.date1) - new Date (b.date1))
+
+            localStorage.setItem('storedTrips', JSON.stringify(state.trips))
         },
         setSelectedTrip: (state, action) => {
             state.selectedTrip.trip = action.payload
@@ -74,5 +79,5 @@ const tripsSlice = createSlice({
     },
 });
 
-export const {addTrip, setSelectedTrip, setSearchedTrips} = tripsSlice.actions;
+export const {addTrip, setSelectedTrip, setSearchedTrips, setTrips} = tripsSlice.actions;
 export default tripsSlice.reducer;

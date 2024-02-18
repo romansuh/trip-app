@@ -1,11 +1,19 @@
 import {useDispatch} from "react-redux";
-import {setSelectedTrip, setSelectedTripCurrentWeather, setSelectedTripInfo} from "../../../store/tripsSlice";
+import {
+    setSelectedTrip,
+    setSelectedTripCurrentWeather,
+    setSelectedTripInfo
+} from "../../../store/tripsSlice";
 import {createFromToWeatherQuery, createTodayWeatherQuery} from "../../../common/api/weatherAPI";
 
-const TripCard= ({address, date1, date2}) => {
+const TripCard = ({
+                      address,
+                      date1,
+                      date2
+                  }) => {
     const dispatch = useDispatch();
 
-    const handleTripCardClick = () => {
+    const handleTripCardSelect = () => {
         dispatch(setSelectedTrip({
             address: address,
             date1: date1,
@@ -17,7 +25,7 @@ const TripCard= ({address, date1, date2}) => {
     }
 
     return (
-        <div className="trip-card" tabIndex="1" onClick={handleTripCardClick}>
+        <div className="trip-card" tabIndex="1" onClick={handleTripCardSelect}>
             <div className="city-image-wrapper">
                 <img className="city-image" src="#" alt="City image"/>
             </div>
