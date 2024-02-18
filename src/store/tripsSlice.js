@@ -24,6 +24,7 @@ const initialState = {
         info: {},
         currentDayInfo: {},
     },
+    searchedTrips: [],
     status: "idle",
     error: "",
 }
@@ -39,6 +40,10 @@ const tripsSlice = createSlice({
         setSelectedTrip: (state, action) => {
             state.selectedTrip.trip = action.payload
         },
+        setSearchedTrips: (state, action) => {
+            state.searchedTrips = state.trips
+                .filter(trip => trip.address.toUpperCase() === action.payload.toUpperCase())
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -69,5 +74,5 @@ const tripsSlice = createSlice({
     },
 });
 
-export const {addTrip, setSelectedTrip} = tripsSlice.actions;
+export const {addTrip, setSelectedTrip, setSearchedTrips} = tripsSlice.actions;
 export default tripsSlice.reducer;
