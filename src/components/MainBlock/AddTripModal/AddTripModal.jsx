@@ -1,5 +1,6 @@
 import {useForm} from "react-hook-form";
 import "./AddTripModal.css";
+import {tripsOptions} from "../../../common/data/tripsOptions";
 
 const AddTripModal = ({onClose}) => {
     const {
@@ -29,10 +30,10 @@ const AddTripModal = ({onClose}) => {
                         defaultValue="none"
                         className="add-trip-form-field"
                     >
-                        <option value="none" disabled className="select-city-placeholder">Please select a city</option>
-                        <option value="Berlin">Berlin</option>
-                        <option value="Tokyo">Tokyo</option>
-                        <option value="London">London</option>
+                        <option className="select-city-placeholder" value="none" disabled >Please select a city</option>
+                        {tripsOptions.map((tripOption, index) => {
+                            return <option key={index} value={tripOption.address}>{tripOption.address}</option>
+                        })}
                     </select>
                     {errors.address && <span style={{color: "red"}}>This field is required</span>}
                 </label>
@@ -41,24 +42,34 @@ const AddTripModal = ({onClose}) => {
                     <input
                         type="text"
                         placeholder="Select date"
-                        {...register("date1", {required: true})}
+                        {...register("date1", {
+                            required: true,
+                            validate: {
+                                moreThanCurrentDate: value => new Date(value) > new Date(),
+                            }
+                        })}
                         onFocus={(e) => e.target.type = "date"}
                         onBlur={(e) => e.target.type = "text"}
                         className="add-trip-form-field"
                     />
-                    {errors.date1 && <span style={{color: "red"}}>This field is required</span>}
+                    {errors.date1 && <span style={{color: "red"}}>This field is required, date must be in the future</span>}
                 </label>
                 <label className="add-trip-form-label">
                     <span><span style={{color: "red"}}>*</span>End date</span>
                     <input
                         type="text"
                         placeholder="Select date"
-                        {...register("date2", {required: true})}
+                        {...register("date2", {
+                            required: true,
+                            validate: {
+                                moreThanStartDate: value => new Date(value) > new Date(getValues().date1),
+                            }
+                        })}
                         onFocus={(e) => e.target.type = "date"}
                         onBlur={(e) => e.target.type = "text"}
                         className="add-trip-form-field"
                     />
-                    {errors.date2 && <span style={{color: "red"}}>This field is required</span>}
+                    {errors.date2 && <span style={{color: "red"}}>This field is required, date must be in the future as to start date</span>}
                 </label>
 
                 <hr/>
