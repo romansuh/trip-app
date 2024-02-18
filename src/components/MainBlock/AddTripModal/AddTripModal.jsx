@@ -1,16 +1,21 @@
 import {useForm} from "react-hook-form";
 import "./AddTripModal.css";
 import {tripsOptions} from "../../../common/data/tripsOptions";
+import {useDispatch} from "react-redux";
+import {addTrip} from "../../../store/tripsSlice";
 
 const AddTripModal = ({onClose}) => {
+    const dispatch = useDispatch();
+
     const {
         register,
         handleSubmit,
-        formState: {errors}
+        formState: {errors},
+        getValues,
     } = useForm();
 
     const handeAddTripSubmit = (data) => {
-        console.log(data)
+        dispatch(addTrip(data))
 
         onClose();
     };
@@ -62,7 +67,7 @@ const AddTripModal = ({onClose}) => {
                         {...register("date2", {
                             required: true,
                             validate: {
-                                moreThanStartDate: value => new Date(value) > new Date(getValues().date1),
+                                moreThanStartDate: value => new Date(value) > new Date(getValues("date1")),
                             }
                         })}
                         onFocus={(e) => e.target.type = "date"}

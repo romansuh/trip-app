@@ -1,16 +1,10 @@
 import "./TripsCards.css"
 import TripCard from "./TripCard";
 import ButtonAddTrip from "./ButtonAddTrip";
-import {useState} from "react";
+import {useSelector} from "react-redux";
 
 const TripsCards = () => {
-    const [trips, setTrips] = useState([
-        {
-            address: "Berlin",
-            date1: "2024-07-23",
-            date2: "2024-08-1"
-        }
-    ]);
+    const trips = useSelector(state => state.trips.trips)
 
     return (
         <div className="trips-cards-container">
