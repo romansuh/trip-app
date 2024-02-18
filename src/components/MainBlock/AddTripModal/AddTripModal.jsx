@@ -50,7 +50,7 @@ const AddTripModal = ({onClose}) => {
                         {...register("date1", {
                             required: true,
                             validate: {
-                                moreThanCurrentDate: value => new Date(value) > new Date(),
+                                moreThanCurrentDate: value => new Date(value) >= new Date(),
                             }
                         })}
                         onFocus={(e) => e.target.type = "date"}
