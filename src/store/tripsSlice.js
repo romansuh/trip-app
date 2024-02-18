@@ -33,7 +33,8 @@ const tripsSlice = createSlice({
     initialState,
     reducers: {
         addTrip: (state, action) => {
-            state.trips = [...state.trips, action.payload].sort((a, b) => a.date1 - b.date1)
+            state.trips = [...state.trips, action.payload]
+                .sort((a, b) => new Date(a.date1) - new Date (b.date1))
         },
         setSelectedTrip: (state, action) => {
             state.selectedTrip.trip = action.payload
