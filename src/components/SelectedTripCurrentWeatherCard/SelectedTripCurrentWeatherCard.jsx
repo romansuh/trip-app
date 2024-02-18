@@ -32,7 +32,7 @@ const SelectedTripCurrentWeatherCard = () => {
                         <span>{address}</span>
                     </div>
 
-                    <CountdownTimer targetDate={tripStartDate}/>
+                    <CountdownTimer targetDate={new Date(tripStartDate)}/>
                 </div>
             }
         </div>
