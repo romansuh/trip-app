@@ -11,6 +11,9 @@ export const setSelectedTripCurrentWeather = createAsyncThunk("trips/fetchCurren
     return response.data;
 })
 
+
+const searchPattern = (input) => new RegExp('\\b' + input, 'i');
+
 const initialState = {
     trips: [
         {
@@ -47,7 +50,7 @@ const tripsSlice = createSlice({
         },
         setSearchedTrips: (state, action) => {
             state.searchedTrips = state.trips
-                .filter(trip => trip.address.toUpperCase() === action.payload.toUpperCase())
+                .filter(trip => searchPattern(trip.address.toUpperCase().substring(0, 3)).test(action.payload.toUpperCase()))
         }
     },
     extraReducers: (builder) => {
