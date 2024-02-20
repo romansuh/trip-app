@@ -42,7 +42,14 @@
 .city-image-wrapper {
     width: 250px;
     height: 230px;
-    background-color: gray;
+    padding: 0;
+}
+
+.city-image {
+    width: 250px;
+    height: 230px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .add-trip-button {

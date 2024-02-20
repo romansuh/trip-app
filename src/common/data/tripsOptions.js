@@ -24,6 +24,6 @@ export const tripsOptions = [
         address: "Toronto",
     },
     {
-        address: "Sacramento",
+        address: "Hollywood",
     }
 ]
