@@ -10,7 +10,9 @@ const WeekForecast = () => {
     return (
         <div className="week-forecast-wrapper">
             <h4>Week</h4>
-            {Object.keys(selectedTripInfo).length !== 0 ? renderSelectedTripInfo() : <span>Select trip to see forecast</span>}
+            <div className="week-forecast-container">
+                {Object.keys(selectedTripInfo).length !== 0 ? renderSelectedTripInfo() : <span>Select trip to see forecast</span>}
+            </div>
         </div>
     );
 }

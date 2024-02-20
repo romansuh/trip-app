@@ -1,3 +1,5 @@
+import weatherIcons from "../../../common/assets/weatherIcons/weatherIcons";
+
 const WeekForecastCard = ({
                               datetime,
                               tempmax,
@@ -11,11 +13,11 @@ const WeekForecastCard = ({
             </div>
 
             <div className="week-forecast-card-icon-wrapper">
-                {icon}
+                <img className="week-forecast-card-icon" src={weatherIcons[icon]} alt="weather-icon"/>
             </div>
 
             <div className="week-forecast-card-temps-wrapper">
-                <span>{tempmax}&deg;/{tempmax}&deg;</span>
+                <span>{tempmax}&deg;/{tempmin}&deg;</span>
             </div>
         </div>
     );
