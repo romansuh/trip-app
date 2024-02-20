@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import "./AddTripModal.css";
-import {tripsOptions} from "../../../common/data/tripsOptions";
+import {tripsData} from "../../../common/data/tripsData";
 import {useDispatch} from "react-redux";
 import {addTrip} from "../../../store/tripsSlice";
 
@@ -36,7 +36,7 @@ const AddTripModal = ({onClose}) => {
                         className="add-trip-form-field"
                     >
                         <option className="select-city-placeholder" value="none" disabled >Please select a city</option>
-                        {tripsOptions.map((tripOption, index) => {
+                        {tripsData.map((tripOption, index) => {
                             return <option key={index} value={tripOption.address}>{tripOption.address}</option>
                         })}
                     </select>

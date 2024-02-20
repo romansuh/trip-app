@@ -1,4 +1,4 @@
-export const tripsOptions = [
+export const tripsData = [
     {
         address: "Odesa",
     },
@@ -27,3 +27,6 @@ export const tripsOptions = [
         address: "Hollywood",
     }
 ]
+
+export const getWeekdayByNumber = number =>
+    ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][number];

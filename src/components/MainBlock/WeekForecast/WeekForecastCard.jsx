@@ -1,4 +1,5 @@
 import weatherIcons from "../../../common/assets/weatherIcons/weatherIcons";
+import {getWeekdayByNumber} from "../../../common/data/tripsData";
 
 const WeekForecastCard = ({
                               datetime,
@@ -9,7 +10,7 @@ const WeekForecastCard = ({
     return (
         <div className="week-forecast-card">
             <div className="week-forecast-card-weekday-wrapper">
-                <span>{new Date(datetime).getDay()}</span>
+                <span>{getWeekdayByNumber(new Date(datetime).getDay())}</span>
             </div>
 
             <div className="week-forecast-card-icon-wrapper">

@@ -1,9 +1,9 @@
 .main-block {
     width: 65%;
-    padding: 20px 40px;
+    padding: 20px 40px 40px 40px;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    justify-content: space-between;
 }
 
 .main-block-header {

@@ -1,13 +1,29 @@
 .week-forecast-wrapper {
-    background-color: gray;
     width: 850px;
+    display: flex;
+    flex-direction: column;
 }
 
 .week-forecast-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    overflow-x: hidden;
+    height: 310px;
+    scroll-margin: 20px;
+    scroll-behavior: smooth;
+}
+
+.week-forecast-card {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.week-forecast-card-weekday-wrapper {
+    color: gray;
 }
 
 .week-forecast-card-icon-wrapper {
@@ -19,4 +35,8 @@
 .week-forecast-card-icon {
     max-height: 100%;
     max-width: 100%;
+}
+
+.week-forecast-card-temps-wrapper {
+    font-size: 22px;
 }
