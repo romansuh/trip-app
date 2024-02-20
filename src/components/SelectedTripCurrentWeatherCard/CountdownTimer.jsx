@@ -25,11 +25,24 @@ const CountdownTimer = ({targetDate}) => {
 
     return (
         <div className="selected-trip-weather-card-timer-wrapper">
-            <div>
-                <span>{timeLeft.days}</span> days{' '}
-                <span>{timeLeft.hours}</span> hours{' '}
-                <span>{timeLeft.minutes}</span> minutes{' '}
-                <span>{timeLeft.seconds}</span> seconds
+            <div className="selected-trip-weather-card-timer-element-wrapper">
+                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.days}</span>
+                <span className="selected-trip-weather-card-timer-element-type">DAYS</span>
+            </div>
+
+            <div className="selected-trip-weather-card-timer-element-wrapper">
+                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.hours}</span>
+                <span className="selected-trip-weather-card-timer-element-type">HOURS</span>
+            </div>
+
+            <div className="selected-trip-weather-card-timer-element-wrapper">
+                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.minutes}</span>
+                <span className="selected-trip-weather-card-timer-element-type">MINUTES</span>
+            </div>
+
+            <div className="selected-trip-weather-card-timer-element-wrapper">
+                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.seconds}</span>
+                <span className="selected-trip-weather-card-timer-element-type">SECONDS</span>
             </div>
         </div>
     );
