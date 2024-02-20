@@ -39,17 +39,29 @@
     box-shadow: 0 1px 16px 2px rgba(210, 210, 210, 0.75);
 }
 
-.city-image-wrapper {
+.trip-card-city-image-wrapper {
     width: 250px;
     height: 230px;
     padding: 0;
 }
 
-.city-image {
+.trip-card-city-image {
     width: 250px;
     height: 230px;
     max-width: 100%;
     max-height: 100%;
+}
+
+.trip-card-address, .trip-card-dates{
+    margin: 16px;
+}
+
+.trip-card-address {
+    font-weight: bolder;
+}
+
+.trip-card-dates {
+    color: gray;
 }
 
 .add-trip-button {
@@ -60,4 +72,11 @@
     text-align: center;
     border: 1px solid rgba(232, 232, 234, 0.78);
     font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.add-trip-button:hover {
+    background-color: rgba(194, 194, 196, 0.78);
 }

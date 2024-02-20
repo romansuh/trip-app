@@ -28,11 +28,11 @@ const TripCard = ({
 
     return (
         <div className="trip-card" tabIndex="1" onClick={handleTripCardSelect}>
-            <div className="city-image-wrapper">
-                <img className="city-image" src={imageURL} alt="City image"/>
+            <div className="trip-card-city-image-wrapper">
+                <img className="trip-card-city-image" src={imageURL} alt="City image"/>
             </div>
-            <p>{address}</p>
-            <p>{new Date(date1).toLocaleDateString()}-{new Date(date2).toLocaleDateString()}</p>
+            <p className="trip-card-address">{address}</p>
+            <p className="trip-card-dates">{new Date(date1).toLocaleDateString()}-{new Date(date2).toLocaleDateString()}</p>
         </div>
     );
 }
