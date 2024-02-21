@@ -6,14 +6,10 @@
 }
 
 .selected-trip-weather-wrapper-masking {
-    background-position: 200% 80%;
+    background-position: 200% 80%, -30% -10%, -60% 110%;
     background-repeat: no-repeat;
-    background-size: 500px;
+    background-size: 450px;
     height: 100%;
-}
-
-.selected-trip-weather-wrapper-masking:before {
-    position: absolute;
 }
 
 .selected-trip-weather-card {

@@ -26,7 +26,7 @@ const SelectedTripCurrentWeatherCard = () => {
                     className="selected-trip-weather-wrapper-masking"
                     style={
                         {
-                            backgroundImage: `url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg")`
+                            backgroundImage: `url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg")`
                         }
                     }
                 >
