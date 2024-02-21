@@ -61,6 +61,7 @@ const tripsSlice = createSlice({
             .addCase(setSelectedTripInfo.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.payload;
+                console.log(action.payload)
             })
             .addCase(setSelectedTripInfo.fulfilled, (state, action) => {
                 state.selectedTrip.info = action.payload;
@@ -73,6 +74,7 @@ const tripsSlice = createSlice({
             .addCase(setSelectedTripCurrentWeather.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.payload;
+                console.log(action.payload)
             })
             .addCase(setSelectedTripCurrentWeather.fulfilled, (state, action) => {
                 state.selectedTrip.currentDayInfo = action.payload;

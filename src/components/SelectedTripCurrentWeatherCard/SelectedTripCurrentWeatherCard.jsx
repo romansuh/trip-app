@@ -4,9 +4,11 @@ import {useMemo} from "react";
 import CountdownTimer from "./CountdownTimer";
 import weatherIcons from "../../common/assets/weatherIconsColor/weatherIcons";
 import {getWeekdayByNumber} from "../../common/data/tripsData";
+import {isTSTypeQuery} from "eslint-plugin-react/lib/util/ast";
 
 const SelectedTripCurrentWeatherCard = () => {
     const selectedTrip = useSelector(state => state.trips.selectedTrip);
+    const status = useSelector(state => state.trips.status);
 
     const {address, currentDayWeather, tripStartDate} = useMemo(() => {
         return {
@@ -15,13 +17,10 @@ const SelectedTripCurrentWeatherCard = () => {
             tripStartDate: selectedTrip.trip?.date1,
         }
     }, [selectedTrip]);
-    return (
-        <div className="selected-trip-weather-wrapper">
 
-            {Object.keys(selectedTrip.currentDayInfo).length === 0
-                ?
-                <span>Select trip</span>
-                :
+    const renderContent = () => {
+        if (status === "succeeded" && Object.keys(currentDayWeather).length !== 0) {
+            return (
                 <div
                     className="selected-trip-weather-wrapper-masking"
                     style={
@@ -56,7 +55,25 @@ const SelectedTripCurrentWeatherCard = () => {
                         <CountdownTimer targetDate={new Date(tripStartDate)}/>
                     </div>
                 </div>
-            }
+            );
+        }
+
+        let msgToClient = "Select trip to see today forecast"
+
+        if (status === "loading") {
+            msgToClient = "Loading data..."
+        }
+
+        if (status === "error") {
+            msgToClient = "Error occurred fetching data, check console for info"
+        }
+
+        return <p className="selected-trip-weather-card-placeholder">{msgToClient}</p>
+    }
+
+    return (
+        <div className="selected-trip-weather-wrapper">
+            {renderContent()}
         </div>
     );
 }

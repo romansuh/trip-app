@@ -12,6 +12,14 @@
     height: 310px;
     scroll-margin: 20px;
     scroll-behavior: smooth;
+    margin-top: 20px;
+}
+
+.week-forecast-placeholder {
+    color: gray;
+    font-size: 20px;
+    align-self: center;
+    width: max-content;
 }
 
 .week-forecast-card {
