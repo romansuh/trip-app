@@ -50,6 +50,7 @@
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .btn-close-modal {
@@ -61,4 +62,12 @@
     border: none;
     background-color: #535bf2;
     color: white;
+}
+
+@media only screen and (max-width: 380px) {
+    .btn-modal {
+        padding: 10px 20px;
+        font-size: 12px;
+        border-radius: 3px;
+    }
 }

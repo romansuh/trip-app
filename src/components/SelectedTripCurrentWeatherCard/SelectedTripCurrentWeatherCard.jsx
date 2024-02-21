@@ -19,7 +19,10 @@ const SelectedTripCurrentWeatherCard = () => {
     }, [selectedTrip]);
 
     const renderContent = () => {
-        if (status === "succeeded" && Object.keys(currentDayWeather)?.length !== 0) {
+        if (status === "succeeded" &&
+            typeof currentDayWeather !== "undefined" &&
+            currentDayWeather !== null &&
+            Object.keys(currentDayWeather)?.length !== 0) {
             return (
                 <div
                     className="selected-trip-weather-wrapper-masking"
@@ -30,27 +33,30 @@ const SelectedTripCurrentWeatherCard = () => {
                     }
                 >
                     <div className="selected-trip-weather-card">
-                        <div className="selected-trip-weather-card-weekday">
-                            <span>{getWeekdayByNumber(new Date(currentDayWeather.datetime).getDay())}</span>
-                        </div>
+                        <div className="selected-trip-weather-card-weather-info">
+                            <div className="selected-trip-weather-card-weekday">
+                                <span>{getWeekdayByNumber(new Date(currentDayWeather.datetime).getDay())}</span>
+                            </div>
 
-                        <div className="selected-trip-weather-card-icon-temp-wrapper">
-                            <img
-                                className="selected-trip-weather-card-icon"
-                                src={weatherIcons[currentDayWeather.icon]}
-                                alt="weather-icon"
-                            />
-                            <span className="selected-trip-weather-card-temp">
+                            <div className="selected-trip-weather-card-icon-temp-wrapper">
+                                <img
+                                    className="selected-trip-weather-card-icon"
+                                    src={weatherIcons[currentDayWeather.icon]}
+                                    alt="weather-icon"
+                                />
+                                <span className="selected-trip-weather-card-temp">
                                 {currentDayWeather.temp}
-                                <sup>
+                                    <sup>
                                     <sup className="selected-trip-weather-card-temp-celcius">&deg;C</sup>
                                 </sup>
                             </span>
+                            </div>
+
+                            <div className="selected-trip-weather-card-city">
+                                <span>{address}</span>
+                            </div>
                         </div>
 
-                        <div className="selected-trip-weather-card-city">
-                            <span>{address}</span>
-                        </div>
 
                         <CountdownTimer targetDate={new Date(tripStartDate)}/>
                     </div>
