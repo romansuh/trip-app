@@ -7,9 +7,9 @@ import {addTrip} from "../../../store/tripsSlice";
 const isWithin15Days = (dateToCheck, fromDate) => {
     const timeDifference = dateToCheck.getTime() - fromDate.getTime();
 
-    const daysDifference = timeDifference / (1000 * 3600 * 24);
+    const daysDifference = Math.round(timeDifference / (1000 * 3600 * 24));;
 
-    return Math.abs(daysDifference) <= 15;
+    return daysDifference <= 15;
 }
 
 const AddTripModal = ({onClose}) => {
@@ -58,6 +58,7 @@ const AddTripModal = ({onClose}) => {
                         {...register("date1", {
                             required: true,
                             validate: {
+                                isBiggerThanCurrent: value => new Date(value) > new Date(),
                                 isWithin15DaysFromNow: value => isWithin15Days(new Date(value), new Date()),
                             }
                         })}
