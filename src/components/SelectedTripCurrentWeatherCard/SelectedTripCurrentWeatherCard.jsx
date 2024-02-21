@@ -2,9 +2,8 @@ import "./SelectedTripCurrentWeatherCard.css";
 import {useSelector} from "react-redux";
 import {useMemo} from "react";
 import CountdownTimer from "./CountdownTimer";
-import weatherIcons from "../../common/assets/weatherIconsColor/weatherIcons";
+import weatherIcons from "../../common/icons/weatherIconsColor/weatherIcons";
 import {getWeekdayByNumber} from "../../common/data/tripsData";
-import {isTSTypeQuery} from "eslint-plugin-react/lib/util/ast";
 
 const SelectedTripCurrentWeatherCard = () => {
     const selectedTrip = useSelector(state => state.trips.selectedTrip);
@@ -28,7 +27,7 @@ const SelectedTripCurrentWeatherCard = () => {
                     className="selected-trip-weather-wrapper-masking"
                     style={
                         {
-                            backgroundImage: `url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("/trip-app/src/common/assets/weatherIconsMono/${currentDayWeather.icon}.svg")`
+                            backgroundImage: `url("trip-app/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("trip-app/assets/weatherIconsMono/${currentDayWeather.icon}.svg"), url("trip-app/assets/weatherIconsMono/${currentDayWeather.icon}.svg")`
                         }
                     }
                 >

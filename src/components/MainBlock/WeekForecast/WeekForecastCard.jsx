@@ -1,4 +1,4 @@
-import weatherIcons from "../../../common/assets/weatherIconsColor/weatherIcons";
+import weatherIcons from "../../../common/icons/weatherIconsColor/weatherIcons";
 import {getWeekdayByNumber} from "../../../common/data/tripsData";
 
 const WeekForecastCard = ({
