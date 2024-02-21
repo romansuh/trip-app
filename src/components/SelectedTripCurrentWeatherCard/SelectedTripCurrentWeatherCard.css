@@ -3,17 +3,21 @@
     color: white;
     width: 35%;
     box-shadow: 0 1px 16px 2px rgba(210, 210, 210, 0.75);
+    display: flex;
+}
+
+.selected-trip-weather-card-placeholder {
+    font-size: 32px;
+    align-self: center;
+    margin: auto;
 }
 
 .selected-trip-weather-wrapper-masking {
-    background-position: 200% 80%;
+    width: 100%;
+    background-position: 200% 80%, -30% -10%, -60% 110%;
     background-repeat: no-repeat;
-    background-size: 500px;
+    background-size: 450px;
     height: 100%;
-}
-
-.selected-trip-weather-wrapper-masking:before {
-    position: absolute;
 }
 
 .selected-trip-weather-card {
@@ -66,6 +70,11 @@
     margin-top: 150px;
 }
 
+.selected-trip-weather-card-timer-today {
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .selected-trip-weather-card-timer-element-wrapper {
     display: flex;
     flex-direction: column;
@@ -82,4 +91,154 @@
     font-size: 16px;
     font-weight: 100;
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 2560px) {
+    .selected-trip-weather-wrapper-masking {
+        background-position: 150% 60%, -15% -10%, -30% 100%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .selected-trip-weather-card-placeholder {
+        font-size: 20px;
+    }
+
+    .selected-trip-weather-wrapper-masking {
+        background-position: -600% 50%, 500% 10%, 400% 100%;
+    }
+
+    .selected-trip-weather-card {
+        padding-top: 70%;
+    }
+
+    .selected-trip-weather-card-timer-today {
+        font-size: 40px;
+    }
+
+    .selected-trip-weather-card-timer-element-time {
+        font-weight: 900;
+        font-size: 35px;
+    }
+
+    .selected-trip-weather-card-timer-wrapper {
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .selected-trip-weather-wrapper-masking {
+        background-size: 270px;
+    }
+
+    .selected-trip-weather-card-placeholder {
+        font-size: 16px;
+    }
+
+    .selected-trip-weather-card-weekday {
+        font-size: 35px;
+    }
+
+    .selected-trip-weather-card-city {
+        font-size: 30px;
+    }
+
+    .selected-trip-weather-card-timer-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: 100px;
+    }
+
+    .selected-trip-weather-card-timer-today {
+        font-size: 24px;
+        grid-column: 1 / -1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .selected-trip-weather-wrapper {
+        width: 100%;
+        height: 30%;
+    }
+
+    .selected-trip-weather-card {
+        justify-content: flex-start;
+        gap: 0;
+        padding: 10px;
+    }
+
+    .selected-trip-weather-card-timer-wrapper {
+        margin-top: 30px;
+    }
+
+    .selected-trip-weather-wrapper-masking {
+        background-position: 120% 50%, center 220%, left -100%;
+    }
+
+    .selected-trip-weather-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .selected-trip-weather-card-weather-info {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .selected-trip-weather-wrapper {
+        height: 50%;
+    }
+
+    .selected-trip-weather-wrapper-masking {
+        background-position: 150% 20%;
+    }
+
+    .selected-trip-weather-card-weather-info {
+        padding-top: 40px;
+    }
+
+    .selected-trip-weather-card-weekday {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .selected-trip-weather-card-icon-temp-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .selected-trip-weather-card-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .selected-trip-weather-card-temp {
+        font-size: 26px;
+    }
+
+    .selected-trip-weather-card-city {
+        font-size: 24px;
+        font-weight: lighter;
+    }
+
+    .selected-trip-weather-card-timer-element-time {
+        font-size: 24px;
+    }
+
+    .selected-trip-weather-card-timer-element-type {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+
 }
