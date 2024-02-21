@@ -19,7 +19,7 @@ const SelectedTripCurrentWeatherCard = () => {
     }, [selectedTrip]);
 
     const renderContent = () => {
-        if (status === "succeeded" && Object.keys(currentDayWeather).length !== 0) {
+        if (status === "succeeded" && Object.keys(currentDayWeather)?.length !== 0) {
             return (
                 <div
                     className="selected-trip-weather-wrapper-masking"

@@ -25,25 +25,34 @@ const CountdownTimer = ({targetDate}) => {
 
     return (
         <div className="selected-trip-weather-card-timer-wrapper">
-            <div className="selected-trip-weather-card-timer-element-wrapper">
-                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.days}</span>
-                <span className="selected-trip-weather-card-timer-element-type">DAYS</span>
-            </div>
+            {
+                timeLeft.days < 0 && timeLeft.hours < 0 && timeLeft.minutes < 0 && timeLeft.seconds < 0
+                    ?
+                    <p className="selected-trip-weather-card-timer-today">TRIP STARTED!</p>
+                    :
+                    <>
+                        <div className="selected-trip-weather-card-timer-element-wrapper">
+                            <span className="selected-trip-weather-card-timer-element-time">{timeLeft.days}</span>
+                            <span className="selected-trip-weather-card-timer-element-type">DAYS</span>
+                        </div>
 
-            <div className="selected-trip-weather-card-timer-element-wrapper">
-                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.hours}</span>
-                <span className="selected-trip-weather-card-timer-element-type">HOURS</span>
-            </div>
+                        <div className="selected-trip-weather-card-timer-element-wrapper">
+                            <span className="selected-trip-weather-card-timer-element-time">{timeLeft.hours}</span>
+                            <span className="selected-trip-weather-card-timer-element-type">HOURS</span>
+                        </div>
 
-            <div className="selected-trip-weather-card-timer-element-wrapper">
-                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.minutes}</span>
-                <span className="selected-trip-weather-card-timer-element-type">MINUTES</span>
-            </div>
+                        <div className="selected-trip-weather-card-timer-element-wrapper">
+                            <span className="selected-trip-weather-card-timer-element-time">{timeLeft.minutes}</span>
+                            <span className="selected-trip-weather-card-timer-element-type">MINUTES</span>
+                        </div>
 
-            <div className="selected-trip-weather-card-timer-element-wrapper">
-                <span className="selected-trip-weather-card-timer-element-time">{timeLeft.seconds}</span>
-                <span className="selected-trip-weather-card-timer-element-type">SECONDS</span>
-            </div>
+                        <div className="selected-trip-weather-card-timer-element-wrapper">
+                            <span className="selected-trip-weather-card-timer-element-time">{timeLeft.seconds}</span>
+                            <span className="selected-trip-weather-card-timer-element-type">SECONDS</span>
+                        </div>
+                    </>
+            }
+
         </div>
     );
 };

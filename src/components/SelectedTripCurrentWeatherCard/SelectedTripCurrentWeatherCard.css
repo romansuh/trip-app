@@ -13,6 +13,7 @@
 }
 
 .selected-trip-weather-wrapper-masking {
+    width: 100%;
     background-position: 200% 80%, -30% -10%, -60% 110%;
     background-repeat: no-repeat;
     background-size: 450px;
@@ -67,6 +68,11 @@
     flex-wrap: wrap;
     gap: 55px;
     margin-top: 150px;
+}
+
+.selected-trip-weather-card-timer-today {
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .selected-trip-weather-card-timer-element-wrapper {
